@@ -1,5 +1,8 @@
 ##plot3.r
 
+## load dplyr package for filter() function
+library(dplyr)
+
 ## read in table and subset for Feb 1, 2007, and Feb 2, 2007
 df <- read.table("household_power_consumption.txt", na.strings="?", sep=";", header=TRUE, stringsAsFactors=FALSE) %>% filter(Date == "1/2/2007" | Date == "2/2/2007")
 ## combine Date and Time columns and format as a POSIXlt class
